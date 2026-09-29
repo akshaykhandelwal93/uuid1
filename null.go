@@ -35,6 +35,7 @@ type NullUUID struct {
 func (nu *NullUUID) Scan(value interface{}) error {
 	if value == nil {
 		nu.UUID, nu.Valid = Nil, false
+		value = value
 		return nil
 	}
 
